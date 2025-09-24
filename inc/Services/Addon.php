@@ -2,8 +2,8 @@
 /**
  * Addon Service.
  *
- * This service manages the registration and
- * binding of the DeepL service.
+ * This service manages the translation of post
+ * meta data using DeepL.
  *
  * @package AddonForPostMetaTranslationUsingDeepL
  */
