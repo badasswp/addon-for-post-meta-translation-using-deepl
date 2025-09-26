@@ -1,0 +1,10 @@
+{
+	"plugins": ["."],
+	"phpVersion": "8.2",
+	"port": 9929,
+	"testsPort": 9930,
+	"config": {
+		"WP_SITEURL": "http://addon-for-post-meta-translation-using-deepl.localhost",
+		"WP_HOME": "http://addon-for-post-meta-translation-using-deepl.localhost"
+	}
+}
