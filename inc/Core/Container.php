@@ -11,7 +11,7 @@
 namespace AddonForPostMetaTranslationUsingDeepL\Core;
 
 use AddonForPostMetaTranslationUsingDeepL\Interfaces\Kernel;
-use AddonForPostMetaTranslationUsingDeepL\Services\Admin;
+use AddonForPostMetaTranslationUsingDeepL\Services\Addon;
 
 class Container implements Kernel {
 	/**
@@ -30,7 +30,7 @@ class Container implements Kernel {
 	 */
 	public function __construct() {
 		static::$services = [
-			Admin::class,
+			Addon::class,
 		];
 	}
 
