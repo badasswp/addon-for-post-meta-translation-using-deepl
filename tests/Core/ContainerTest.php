@@ -5,11 +5,11 @@ namespace AddonForPostMetaTranslationUsingDeepL\Tests\Core;
 use Mockery;
 use WP_Mock\Tools\TestCase;
 use AddonForPostMetaTranslationUsingDeepL\Core\Container;
-use AddonForPostMetaTranslationUsingDeepL\Services\Admin;
+use AddonForPostMetaTranslationUsingDeepL\Services\Addon;
 
 /**
  * @covers \AddonForPostMetaTranslationUsingDeepL\Core\Container::__construct
- * @covers \AddonForPostMetaTranslationUsingDeepL\Services\Admin::register
+ * @covers \AddonForPostMetaTranslationUsingDeepL\Services\Addon::register
  */
 class ContainerTest extends TestCase {
 	public Container $container;
@@ -25,6 +25,6 @@ class ContainerTest extends TestCase {
 	public function test_container_contains_required_services() {
 		$this->container = new Container();
 
-		$this->assertTrue( in_array( Admin::class, Container::$services, true ) );
+		$this->assertTrue( in_array( Addon::class, Container::$services, true ) );
 	}
 }
