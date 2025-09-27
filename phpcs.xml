@@ -2,9 +2,12 @@
 <ruleset name="AddonForPostMetaTranslationUsingDeepL">
 	<rule ref="WordPress-Core">
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />
-		<exclude name="WordPress.PHP.DisallowShortTernary.Found" />
 		<exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
 		<exclude name="Universal.Operators.DisallowShortTernary.Found" />
+		<exclude name="WordPress.PHP.DisallowShortTernary.Found" />
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+		<exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
 	</rule>
 
 	<arg value="s" />
