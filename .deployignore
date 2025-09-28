@@ -5,6 +5,8 @@ package.json
 phpcs.xml
 phpunit.xml
 README.md
+bin
 assets
 tests
+.github
 CHANGELOG.md
