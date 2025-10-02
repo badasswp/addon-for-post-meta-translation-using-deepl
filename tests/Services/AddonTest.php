@@ -6,15 +6,15 @@ use WP_Mock;
 use WP_Post;
 use Mockery;
 use WP_Mock\Tools\TestCase;
-use AddonForPostMetaTranslationUsingDeepL\Services\Addon;
+use AddonForPostMetaTranslationUsingDeepL\Services\DeepL;
 
 /**
- * @covers \AddonForPostMetaTranslationUsingDeepL\Services\Addon::register
- * @covers \AddonForPostMetaTranslationUsingDeepL\Services\Addon::add_post_meta_to_list_of_strings_to_translate
- * @covers \AddonForPostMetaTranslationUsingDeepL\Services\Addon::update_translated_post_meta
+ * @covers \AddonForPostMetaTranslationUsingDeepL\Services\DeepL::register
+ * @covers \AddonForPostMetaTranslationUsingDeepL\Services\DeepL::add_post_meta_to_list_of_strings_to_translate
+ * @covers \AddonForPostMetaTranslationUsingDeepL\Services\DeepL::update_translated_post_meta
  */
-class AddonTest extends TestCase {
-	public Addon $addon;
+class DeepLTest extends TestCase {
+	public DeepL $deepl;
 
 	public function setUp(): void {
 		WP_Mock::setUp();
@@ -22,7 +22,7 @@ class AddonTest extends TestCase {
 		WP_Mock::userFunction( 'absint' )
 			->andReturnUsing( fn( $arg ) => intval( $arg ) );
 
-		$this->addon = new Addon();
+		$this->deepl = new DeepL();
 	}
 
 	public function tearDown(): void {
@@ -30,10 +30,10 @@ class AddonTest extends TestCase {
 	}
 
 	public function test_register() {
-		WP_Mock::expectActionAdded( 'deepl_translate_after_post_update', [ $this->addon, 'update_translated_post_meta' ], 10, 7 );
-		WP_Mock::expectFilterAdded( 'deepl_translate_post_link_strings', [ $this->addon, 'add_post_meta_to_list_of_strings_to_translate' ], 10, 6 );
+		WP_Mock::expectActionAdded( 'deepl_translate_after_post_update', [ $this->deepl, 'update_translated_post_meta' ], 10, 7 );
+		WP_Mock::expectFilterAdded( 'deepl_translate_post_link_strings', [ $this->deepl, 'add_post_meta_to_list_of_strings_to_translate' ], 10, 6 );
 
-		$register = $this->addon->register();
+		$register = $this->deepl->register();
 
 		$this->assertHooksAdded();
 		$this->assertConditionsMet();
@@ -52,7 +52,7 @@ class AddonTest extends TestCase {
 		$WP_Post     = Mockery::mock( WP_Post::class )->makePartial();
 		$WP_Post->ID = 1;
 
-		$response = $this->addon->add_post_meta_to_list_of_strings_to_translate(
+		$response = $this->deepl->add_post_meta_to_list_of_strings_to_translate(
 			$strings_to_translate,
 			$WP_Post,
 			'RU',
@@ -95,7 +95,7 @@ class AddonTest extends TestCase {
 		$WP_Post     = Mockery::mock( WP_Post::class )->makePartial();
 		$WP_Post->ID = 1;
 
-		$response = $this->addon->add_post_meta_to_list_of_strings_to_translate(
+		$response = $this->deepl->add_post_meta_to_list_of_strings_to_translate(
 			$strings_to_translate,
 			$WP_Post,
 			'RU',
@@ -133,7 +133,7 @@ class AddonTest extends TestCase {
 		$WP_Post     = Mockery::mock( WP_Post::class )->makePartial();
 		$WP_Post->ID = 1;
 
-		$response = $this->addon->update_translated_post_meta(
+		$response = $this->deepl->update_translated_post_meta(
 			$post_array,
 			$strings_to_translate,
 			Mockery::mock( \WP_REST_Response::class )->makePartial(),
@@ -173,7 +173,7 @@ class AddonTest extends TestCase {
 		WP_Mock::userFunction( 'update_post_meta' )
 			->twice();
 
-		$response = $this->addon->update_translated_post_meta(
+		$response = $this->deepl->update_translated_post_meta(
 			$post_array,
 			$strings_to_translate,
 			Mockery::mock( \WP_REST_Response::class )->makePartial(),

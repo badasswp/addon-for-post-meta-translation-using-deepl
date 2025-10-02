@@ -1,9 +1,9 @@
 <?php
 /**
- * Addon Service.
+ * DeepL Service.
  *
- * This service manages the translation of post
- * meta data using DeepL.
+ * This service extends the translation functionality
+ * to post meta values of a translated post using DeepL.
  *
  * @package AddonForPostMetaTranslationUsingDeepL
  */
@@ -13,7 +13,7 @@ namespace AddonForPostMetaTranslationUsingDeepL\Services;
 use AddonForPostMetaTranslationUsingDeepL\Abstracts\Service;
 use AddonForPostMetaTranslationUsingDeepL\Interfaces\Kernel;
 
-class Addon extends Service implements Kernel {
+class DeepL extends Service implements Kernel {
 	/**
 	 * Bind to WP.
 	 *
