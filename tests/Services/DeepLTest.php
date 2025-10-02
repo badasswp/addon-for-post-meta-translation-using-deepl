@@ -12,6 +12,7 @@ use AddonForPostMetaTranslationUsingDeepL\Services\DeepL;
  * @covers \AddonForPostMetaTranslationUsingDeepL\Services\DeepL::register
  * @covers \AddonForPostMetaTranslationUsingDeepL\Services\DeepL::add_post_meta_to_list_of_strings_to_translate
  * @covers \AddonForPostMetaTranslationUsingDeepL\Services\DeepL::update_translated_post_meta
+ * @covers \AddonForPostMetaTranslationUsingDeepL\Services\DeepL::get_excluded_meta_keys
  */
 class DeepLTest extends TestCase {
 	public DeepL $deepl;
