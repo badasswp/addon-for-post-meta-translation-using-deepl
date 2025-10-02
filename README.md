@@ -16,6 +16,29 @@ This plugin enables you to translate post meta data using __DeepL__. It integrat
 
 <img width="626" height="235" alt="screenshot-3" src="https://github.com/user-attachments/assets/9682a73c-7725-4485-92ef-6a0a1178956e" />
 
+## Hooks
+
+### PHP Hooks
+
+#### `addon_for_post_meta_translation_using_deepl_excluded_meta_keys`
+
+This custom hook (filter) provides a way to exclude specific meta keys from being translated alongside others.
+
+```php
+add_filter( 'addon_for_post_meta_translation_using_deepl_excluded_meta_keys', [ $this, 'exclude_meta_keys' ], 10, 1 );
+
+public function exclude_meta_keys( $meta_keys ) {
+    $meta_keys = [ 'meta_key_1', 'meta_key_2' ];
+
+    return $meta_keys;
+}
+```
+
+**Parameters**
+
+- meta_keys _`{string[]}`_ By default this will be an empty string array which could contain post meta keys you which to exclude from translation.
+<br/>
+
 ## Contribute
 
 Contributions are __welcome__ and will be fully __credited__. To contribute, please fork this repo and raise a PR (Pull Request) against the `master` branch.
