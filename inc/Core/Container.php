@@ -11,7 +11,8 @@
 namespace AddonForPostMetaTranslationUsingDeepL\Core;
 
 use AddonForPostMetaTranslationUsingDeepL\Interfaces\Kernel;
-use AddonForPostMetaTranslationUsingDeepL\Services\Addon;
+use AddonForPostMetaTranslationUsingDeepL\Services\DeepL;
+use AddonForPostMetaTranslationUsingDeepL\Services\EasyAccordion;
 
 class Container implements Kernel {
 	/**
@@ -30,7 +31,8 @@ class Container implements Kernel {
 	 */
 	public function __construct() {
 		static::$services = [
-			Addon::class,
+			DeepL::class,
+			EasyAccordion::class,
 		];
 	}
 
