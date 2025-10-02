@@ -8,7 +8,7 @@ Translate post meta data when using DeepL translate.
 
 By default, the __DeepL__ plugin only translates the post `title`, `content` and `excerpt`.
 
-This plugin enables you to translate post meta data using __DeepL__. It integrates nicely with the __DeepL__ & __DeepL pro__ plugin and is useful for translating post meta for popular plugins like __WooCommerce__, __Yoast SEO__ and so on.
+This plugin enables you to translate post meta data using __DeepL__. It integrates nicely with the __DeepL__ & __DeepL pro__ plugin and is useful for translating post meta for popular plugins like __WooCommerce__, __Yoast SEO__, __EasyAccordion__ and so on.
 
 <img width="666" height="682" alt="screenshot-1" src="https://github.com/user-attachments/assets/7bcb6c1b-7e81-4a2c-b7cd-a0559f37c4af" />
 
