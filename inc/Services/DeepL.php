@@ -60,6 +60,11 @@ class DeepL extends Service implements Kernel {
 		$all_meta = get_post_meta( $WP_Post->ID );
 
 		foreach ( $all_meta as $meta_key => $meta_value ) {
+			// Exclude disallowed meta keys.
+			if ( in_array( $meta_key, $this->get_excluded_meta_keys(), true ) ) {
+				continue;
+			}
+
 			// Get meta value.
 			$meta_value = get_post_meta( $WP_Post->ID, $meta_key, true );
 
@@ -101,5 +106,27 @@ class DeepL extends Service implements Kernel {
 		foreach ( $post_array as $meta_key => $meta_value ) {
 			update_post_meta( $WP_Post->ID, $meta_key, $post_array[ $meta_key ] );
 		}
+	}
+
+	/**
+	 * Get Excluded meta keys.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
+	public function get_excluded_meta_keys(): array {
+		/**
+		 * Filter excluded meta keys.
+		 *
+		 * We provide a way to enable users to exclude
+		 * specific meta keys from being translated by DeepL.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param string[] $excluded_meta_keys Excluded meta keys.
+		 * @return string[]
+		 */
+		return apply_filters( 'addon_for_post_meta_translation_using_deepl_excluded_meta_keys', [] );
 	}
 }
