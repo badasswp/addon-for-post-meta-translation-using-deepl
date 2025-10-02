@@ -58,8 +58,9 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 
 = 1.0.0 =
 * Initial plugin release.
-* Feat: Add Post meta translation capability using DeepL.
-* Feat: Add custom filters to modify plugin behaviour.
+* Feat: Add Post meta translation across all post meta values of a translated post.
+* Feat: Add Post meta translation for Easy Accordion content.
+* Feat: Add custom filters.
 * Test: Update unit tests.
 * Update README docs.
 * Tested up to WP 6.8.2.
