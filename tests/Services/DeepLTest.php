@@ -86,6 +86,8 @@ class DeepLTest extends TestCase {
 				}
 			);
 
+		WP_Mock::expectFilter( 'addon_for_post_meta_translation_using_deepl_excluded_meta_keys', [] );
+
 		$strings_to_translate = [
 			'post_title'   => 'Hello World',
 			'post_content' => 'Welcome to WordPress!',
@@ -112,6 +114,61 @@ class DeepLTest extends TestCase {
 				'post_excerpt'    => '',
 				'post_meta_key_1' => 'What a Wonderful World!',
 				'post_meta_key_2' => 'The Adventures of Huckleberry Finn.',
+			]
+		);
+		$this->assertConditionsMet();
+	}
+
+	public function test_add_post_meta_to_list_of_strings_to_translate_returns_new_array_and_excludes_meta_keys_mentioned_in_the_filter() {
+		WP_Mock::userFunction( 'get_post_meta' )
+			->andReturnUsing(
+				function ( $arg1, $arg2 = null, $arg3 = null ) {
+					$post_meta = [
+						'post_meta_key_1' => 'What a Wonderful World!',
+						'post_meta_key_2' => 'The Adventures of Huckleberry Finn.',
+						'post_meta_key_3' => [
+							'Such a jolly good fellow!',
+							'Keep Calm! Carry on Coding!',
+						],
+					];
+
+					if ( null === $arg2 && null === $arg3 ) {
+						return $post_meta;
+					}
+
+					return $post_meta[ $arg2 ];
+				}
+			);
+
+		WP_Mock::onFilter( 'addon_for_post_meta_translation_using_deepl_excluded_meta_keys' )
+			->with( [] )
+			->reply( [ 'post_meta_key_2' ] );
+
+		$strings_to_translate = [
+			'post_title'   => 'Hello World',
+			'post_content' => 'Welcome to WordPress!',
+			'post_excerpt' => '',
+		];
+
+		$WP_Post     = Mockery::mock( WP_Post::class )->makePartial();
+		$WP_Post->ID = 1;
+
+		$response = $this->deepl->add_post_meta_to_list_of_strings_to_translate(
+			$strings_to_translate,
+			$WP_Post,
+			'RU',
+			'EN',
+			'bulk',
+			'create'
+		);
+
+		$this->assertSame(
+			$response,
+			[
+				'post_title'      => 'Hello World',
+				'post_content'    => 'Welcome to WordPress!',
+				'post_excerpt'    => '',
+				'post_meta_key_1' => 'What a Wonderful World!',
 			]
 		);
 		$this->assertConditionsMet();
@@ -187,6 +244,17 @@ class DeepLTest extends TestCase {
 		);
 
 		$this->assertNull( $response );
+		$this->assertConditionsMet();
+	}
+
+	public function test_get_excluded_meta_keys() {
+		WP_Mock::onFilter( 'addon_for_post_meta_translation_using_deepl_excluded_meta_keys' )
+			->with( [] )
+			->reply( [ 'post_meta_key_1' ] );
+
+		$response = $this->deepl->get_excluded_meta_keys();
+
+		$this->assertSame( [ 'post_meta_key_1' ], $response );
 		$this->assertConditionsMet();
 	}
 }
