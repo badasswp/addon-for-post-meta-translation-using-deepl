@@ -2,6 +2,7 @@
 <ruleset name="AddonForPostMetaTranslationUsingDeepL">
 	<rule ref="WordPress-Core">
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />
+		<exclude name="Generic.Files.OneObjectStructurePerFile.MultipleFound" />
 		<exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
 		<exclude name="Universal.Operators.DisallowShortTernary.Found" />
 		<exclude name="Squiz.PHP.Eval.Discouraged" />
