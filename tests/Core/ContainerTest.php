@@ -5,11 +5,13 @@ namespace AddonForPostMetaTranslationUsingDeepL\Tests\Core;
 use Mockery;
 use WP_Mock\Tools\TestCase;
 use AddonForPostMetaTranslationUsingDeepL\Core\Container;
-use AddonForPostMetaTranslationUsingDeepL\Services\Addon;
+use AddonForPostMetaTranslationUsingDeepL\Services\DeepL;
+use AddonForPostMetaTranslationUsingDeepL\Services\EasyAccordion;
 
 /**
  * @covers \AddonForPostMetaTranslationUsingDeepL\Core\Container::__construct
- * @covers \AddonForPostMetaTranslationUsingDeepL\Services\Addon::register
+ * @covers \AddonForPostMetaTranslationUsingDeepL\Services\DeepL::register
+ * @covers \AddonForPostMetaTranslationUsingDeepL\Services\EasyAccordion::register
  */
 class ContainerTest extends TestCase {
 	public Container $container;
@@ -25,6 +27,7 @@ class ContainerTest extends TestCase {
 	public function test_container_contains_required_services() {
 		$this->container = new Container();
 
-		$this->assertTrue( in_array( Addon::class, Container::$services, true ) );
+		$this->assertTrue( in_array( DeepL::class, Container::$services, true ) );
+		$this->assertTrue( in_array( EasyAccordion::class, Container::$services, true ) );
 	}
 }
