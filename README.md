@@ -36,7 +36,7 @@ public function exclude_meta_keys( $meta_keys ) {
 
 **Parameters**
 
-- meta_keys _`{string[]}`_ By default this will be an empty string array which could contain post meta keys you which to exclude from translation.
+- meta_keys _`{string[]}`_ By default this will be an empty string array which could contain post meta keys you wish to exclude from translation.
 <br/>
 
 ## Contribute
