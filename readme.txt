@@ -3,7 +3,7 @@ Contributors: badasswp
 Tags: deepl, translate, ai, post, meta
 Requires at least: 4.0
 Tested up to: 6.8
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,7 +30,7 @@ Our plugin comes with everything you need for translating post meta when using D
 ✔️ Integrates nicely with the <strong>DeepL for WordPress</strong> & <strong>DeepL for WordPress pro</strong> plugins.
 ✔️ Support for major WordPress plugins such as <strong>WooCommerce</strong>, <strong>Yoast SEO</strong> and so on.
 ✔️ <strong>Custom Filters</strong> to help user <strong>modify post meta</strong>.
-✔️ Available in <strong>mutiple langauges</strong> such as Arabic, Chinese, Hebrew, Hindi, Russian, German, Italian, Croatian, Spanish & French languages.
+✔️ Available in <strong>multiple languages</strong> such as Arabic, Chinese, Hebrew, Hindi, Russian, German, Italian, Croatian, Spanish & French languages.
 ✔️ <strong>Backward compatible</strong>, works with most WP versions.
 
 = ✨ Getting Started =
