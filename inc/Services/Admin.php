@@ -63,8 +63,8 @@ class Admin extends Service implements Kernel {
 	 */
 	public function register_options_page(): void {
 		add_menu_page(
-			__( 'Addon for Post Meta Translation using DeepL', 'addon-for-post-meta-translation-using-deepl' ),
-			__( 'Addon for Post Meta Translation using DeepL', 'addon-for-post-meta-translation-using-deepl' ),
+			esc_html__( 'Addon for Post Meta Translation using DeepL', 'addon-for-post-meta-translation-using-deepl' ),
+			esc_html__( 'Addon for Post Meta Translation using DeepL', 'addon-for-post-meta-translation-using-deepl' ),
 			'manage_options',
 			self::PLUGIN_SLUG,
 			[ $this, 'register_options_cb' ],
@@ -84,8 +84,8 @@ class Admin extends Service implements Kernel {
 		$this->options = get_option( self::PLUGIN_OPTION, [] );
 		?>
 		<div class="wrap">
-			<h1><?php _e( 'Addon for Post Meta Translation using DeepL', 'addon-for-post-meta-translation-using-deepl' ); ?></h1>
-			<p><?php _e( 'Translate post meta data when using DeepL translate.', 'addon-for-post-meta-translation-using-deepl' ); ?></p>
+			<h1><?php esc_html_e( 'Addon for Post Meta Translation using DeepL', 'addon-for-post-meta-translation-using-deepl' ); ?></h1>
+			<p><?php esc_html_e( 'Translate post meta data when using DeepL translate.', 'addon-for-post-meta-translation-using-deepl' ); ?></p>
 			<form method="post" action="options.php">
 			<?php
 				settings_fields( self::PLUGIN_GROUP );
