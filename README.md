@@ -4,6 +4,12 @@ Translate post meta data when using DeepL translate.
 
 <img width="626" height="235" alt="screenshot-3" src="https://github.com/user-attachments/assets/b1a1b142-9bca-4913-b382-de482df65f59" />
 
+## Download
+
+Download from [WordPress plugin repository](https://wordpress.org/plugins/addon-for-post-meta-translation-using-deepl/).
+
+You can also get the latest version from any of our [release tags](https://github.com/badasswp/addon-for-post-meta-translation-using-deepl/releases).
+
 ## Why Addon for Post Meta Translation using DeepL?
 
 By default, the __DeepL__ plugin only translates the post `title`, `content` and `excerpt`.

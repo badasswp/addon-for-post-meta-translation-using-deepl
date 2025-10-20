@@ -21,14 +21,14 @@ Add translation for post meta data when using DeepL for WordPress. Integrates ni
 
 As you may have already noticed, the <strong>DeepL for WordPress: translation plugin</strong> only translates the post <strong>title</strong>, <strong>content</strong> and <strong>excerpt</strong>. This means that vital post meta data is left out of most translations for users.
 
-This plugin extends the functionality of the <strong>DeepL for WordPress: translation plugin</strong> by enabling you to translate post meta data easily during translations. It integrates nicely with the <strong>DeepL for WordPress</strong> & <strong>DeepL for WordPress pro</strong> plugin and is useful for translating post meta for popular plugins like <strong>WooCommerce</strong>, <strong>Yoast SEO</strong> and so on.
+This plugin extends the functionality of the <strong>DeepL for WordPress: translation plugin</strong> by enabling you to translate post meta data easily during translations. It integrates nicely with the <strong>DeepL for WordPress</strong> & <strong>DeepL for WordPress pro</strong> plugin and is useful for translating post meta for popular plugins like <strong>WooCommerce</strong>, <strong>Yoast SEO</strong>, <strong>Easy Accordion</strong> and so on.
 
 = ✔️ Features =
 
 Our plugin comes with everything you need for translating post meta when using DeepL.
 
 ✔️ Integrates nicely with the <strong>DeepL for WordPress</strong> & <strong>DeepL for WordPress pro</strong> plugins.
-✔️ Support for major WordPress plugins such as <strong>WooCommerce</strong>, <strong>Yoast SEO</strong> and so on.
+✔️ Support for major WordPress plugins such as <strong>WooCommerce</strong>, <strong>Yoast SEO</strong>, <strong>Easy Accordion</strong> and so on.
 ✔️ <strong>Custom Filters</strong> to help user <strong>modify post meta</strong>.
 ✔️ Available in <strong>multiple languages</strong> such as Arabic, Chinese, Hebrew, Hindi, Russian, German, Italian, Croatian, Spanish & French languages.
 ✔️ <strong>Backward compatible</strong>, works with most WP versions.
