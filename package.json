@@ -1,6 +1,6 @@
 {
   "name": "addon-for-post-meta-translation-using-deepl",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "Translate post meta data when using DeepL translate.",
   "author": "badasswp",
   "license": "GPL-3.0-or-later",
