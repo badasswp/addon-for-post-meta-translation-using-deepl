@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Addon for Post Meta Translation using DeepL
  * Plugin URI:  https://github.com/badasswp/addon-for-post-meta-translation-using-deepl
- * Description: Translate post meta data when using DeepL for WordPress.
+ * Description: Translate post meta data when using DeepL translate.
  * Version:     1.0.2
  * Author:      badasswp
  * Author URI:  https://github.com/badasswp
