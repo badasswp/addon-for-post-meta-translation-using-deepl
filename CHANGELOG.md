@@ -1,6 +1,10 @@
 # Changelog
 
-# 1.0.0
+## 1.0.1
+* Specify `wordpress-plugin` as Composer package type.
+* Tested up to WP 6.9.
+
+## 1.0.0
 * Initial plugin release.
 * Integrates nicely with WooCommerce, Yoast SEO, EasyAccordion and so on.
 * Feat: Add Post meta translation across all post meta values of a translated post.
